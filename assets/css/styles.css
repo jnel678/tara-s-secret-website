@@ -1,0 +1,140 @@
+/* --------- Basic page setup --------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222222;
+  background-color: #fff7fb; /* soft light pink-lilac background, we can match your exact theme later */
+  line-height: 1.6;
+}
+
+/* Container to keep content centered */
+main,
+header,
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+/* --------- Header --------- */
+header {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3c4dd;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin: 0.2rem 0 0.8rem;
+  color: #555555;
+}
+
+/* Navigation */
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c02664; /* accent color (can be changed to your brand colour) */
+  font-weight: 600;
+  margin-right: 0.8rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* --------- Sections --------- */
+section {
+  margin: 1.8rem 0;
+  padding: 1.2rem 1rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #f3c4dd;
+}
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+}
+
+/* Hero section emphasis */
+#hero {
+  background: linear-gradient(135deg, #ffe4f0, #fff7fb);
+  border-color: #f3c4dd;
+}
+
+#hero h2 {
+  font-size: 1.6rem;
+}
+
+#hero p strong {
+  color: #c02664;
+}
+
+/* Shop section (placeholder for products) */
+#shop p {
+  margin-bottom: 0.6rem;
+}
+
+/* Contact list */
+#contact ul {
+  padding-left: 1.2rem;
+}
+
+#contact li {
+  margin-bottom: 0.4rem;
+}
+
+/* Links in content */
+a {
+  color: #c02664;
+}
+
+a:hover {
+  color: #9f1239;
+}
+
+/* --------- Footer --------- */
+footer {
+  border-top: 1px solid #f3c4dd;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+footer p {
+  margin: 0.2rem 0;
+}
+
+/* Responsive: make sure it looks fine on phones */
+@media (max-width: 600px) {
+  main,
+  header,
+  footer {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
