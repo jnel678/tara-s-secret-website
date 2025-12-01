@@ -255,6 +255,99 @@ body {
 }
 
 .product-card {
+  /* Featured products strip */
+.featured-section {
+  margin-top: 2.2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid #FFE0F1;
+}
+
+.featured-header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.featured-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: #FF3FA6;
+  margin: 0 0 0.4rem;
+}
+
+.featured-header h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+}
+
+.featured-text {
+  margin: 0;
+  color: #4B5563;
+  font-size: 0.95rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.featured-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  border: 1px solid #FFE0F1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.featured-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-body {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.featured-body h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.featured-price {
+  margin: 0;
+  font-weight: 700;
+  color: #FF3FA6;
+}
+
+/* Badges */
+.featured-badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.featured-badge-bestseller {
+  background: #E69BB2; /* dusty rose */
+}
+
+.featured-badge-new {
+  background: #FF3FA6; /* signature pink */
+}
+
+.featured-actions {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
   background: #FFFFFF;
   border-radius: 1rem;
   padding: 1rem;
@@ -300,19 +393,7 @@ body {
   margin-top: auto;
 }
 
-/* Currency panel */
-.currency-panel {
-  margin-top: 1.8rem;
-  padding: 1rem;
-  border-radius: 0.9rem;
-  background: #FFF0F6;
-  border: 1px dashed #FFC8E0;
-  font-size: 0.9rem;
-}
 
-.currency-panel h3 {
-  margin-top: 0;
-}
 
 /* ---------- How it works ---------- */
 .section-how {
@@ -448,7 +529,8 @@ body {
   .highlights-grid,
   .product-grid,
   .steps-grid,
-  .contact-grid {
+  .contact-grid,
+  .featured-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -461,7 +543,8 @@ body {
   .highlights-grid,
   .product-grid,
   .steps-grid,
-  .contact-grid {
+  .contact-grid,
+  .featured-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
