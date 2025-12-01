@@ -1,215 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tara's Secret | Lip Care & Gloss</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
-  <!-- HEADER -->
-  <header>
-    <h1>Tara's Secret</h1>
-    <p>Gloss. Care. Confidence.</p>
+  <!-- TOP NAV -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <div class="brand">
+        <div class="brand-mark">TS</div>
+        <div class="brand-text">
+          <span class="brand-name">Tara's Secret</span>
+          <span class="brand-tagline">Gloss. Care. Confidence.</span>
+        </div>
+      </div>
 
-    <nav>
-      <a href="#shop">Shop</a> |
-      <a href="#about">About</a> |
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">Our story</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#shop" class="btn btn-ghost">Shop now</a>
+    </div>
   </header>
 
-  <hr />
-
-  <!-- MAIN CONTENT -->
   <main>
-        <!-- HERO SECTION -->
-    <section id="hero">
-      <h2>Luxurious lip care, made to be seen.</h2>
-      <p>
-        Tara's Secret is a lip care brand offering lip gloss, lip plump, lip scrub,
-        lip oils and lip balm. Our products are created to keep your lips soft, smooth
-        and ready for close-ups.
-      </p>
-      <p><strong>Online store based in Nigeria, shipping worldwide.</strong></p>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-eyebrow">Lip care, softly bold.</p>
+          <h1>Luxurious lip glosses & plumps made for your real beauty.</h1>
+          <p class="hero-body">
+            Tara's Secret is a lip care brand offering lip gloss, lip plump, lip scrub,
+            lip oils and lip balm. Our products are created to keep your lips soft, smooth
+            and ready for close-ups.
+          </p>
+          <p class="hero-highlight">
+            Online store based in Nigeria, shipping worldwide.
+          </p>
 
-      <!-- Hero image -->
-      <img src="assets/css/hero-main.jpg" alt="Tara's Secret lip products" />
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-primary">Explore the collection</a>
+            <a href="#about" class="btn btn-link">Our story</a>
+          </div>
 
+          <div class="hero-badges">
+            <span>Everyday comfort</span>
+            <span>Inclusive shades</span>
+            <span>Gloss, care & confidence</span>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <!-- uses the file you uploaded in assets/css/ -->
+          <img src="assets/css/hero-main.jpg" alt="Tara's Secret lip products" />
+        </div>
+      </div>
     </section>
 
-    <hr />
-
-        <!-- SHOP SECTION: basic product list -->
-    <section id="shop">
-      <h2>Shop Tara's Secret</h2>
-      <p>
-        Here is a simple version of your product range. For now, prices are shown in naira (NGN).
-        Later we will add a currency display for NGN, USD, EUR and GBP, and connect secure payment buttons.
-      </p>
-
-      <h3>Lip gloss</h3>
-      <ul>
-        <li>
-          <strong>Glass Glow Lip Gloss</strong> – high-shine, non-sticky finish.<br />
-          <em>Example price:</em> ₦7,500
-        </li>
-        <li>
-          <strong>Soft Tint Lip Gloss</strong> – sheer colour with moisturising feel.<br />
-          <em>Example price:</em> ₦7,000
-        </li>
-      </ul>
-
-      <h3>Lip plump</h3>
-      <ul>
-        <li>
-          <strong>Plush Plump Lip Plumper</strong> – gentle tingling formula that adds volume and shine.<br />
-          <em>Example price:</em> ₦8,200
-        </li>
-      </ul>
-
-      <h3>Lip scrub</h3>
-      <ul>
-        <li>
-          <strong>Sugar Kiss Lip Scrub</strong> – sugar-based scrub to remove dry skin and smooth your lips.<br />
-          <em>Example price:</em> ₦6,800
-        </li>
-      </ul>
-
-      <h3>Lip oils</h3>
-      <ul>
-        <li>
-          <strong>Velvet Care Lip Oil</strong> – lightweight oil for soft, glossy lips.<br />
-          <em>Example price:</em> ₦7,900
-        </li>
-      </ul>
-
-      <h3>Lip balm</h3>
-      <ul>
-        <li>
-          <strong>Soft Cloud Lip Balm</strong> – everyday hydration and protection for your lips.<br />
-          <em>Example price:</em> ₦6,000
-        </li>
-      </ul>
-      <h3>Currency & international shoppers</h3>
-      <p>
-        Our base prices are listed in Nigerian naira (NGN). For international customers,
-        here are approximate values in other major currencies. Your bank or card provider
-        may show slightly different amounts at checkout.
-      </p>
-      <ul>
-        <li>
-          Glass Glow Lip Gloss – ₦7,500 (about $12 / €11 / £9)
-        </li>
-        <li>
-          Plush Plump Lip Plumper – ₦8,200 (about $14 / €13 / £11)
-        </li>
-        <li>
-          Sugar Kiss Lip Scrub – ₦6,800 (about $10 / €9 / £8)
-        </li>
-        <li>
-          Velvet Care Lip Oil – ₦7,900 (about $13 / €12 / £10)
-        </li>
-        <li>
-          Soft Cloud Lip Balm – ₦6,000 (about $9 / €8 / £7)
-        </li>
-      </ul>
-
-      <p>
-        <strong>Note:</strong> These prices are just placeholders for now.
-        We will replace them with your real catalogue and prices, and connect each product
-        to a secure third-party payment page.
-      </p>
-
-      <p>
-        <button type="button" disabled>
-          Buy now (coming soon)
-        </button>
-      </p>
+    <!-- HIGHLIGHTS -->
+    <section class="section section-highlights">
+      <div class="container highlights-grid">
+        <div class="highlight-card">
+          <h3>Soft, wearable formulas</h3>
+          <p>Non-sticky glosses, nourishing oils and balms that feel comfortable all day.</p>
+        </div>
+        <div class="highlight-card">
+          <h3>Made for every tone</h3>
+          <p>Created for every skin tone and undertone so your lips always feel seen.</p>
+        </div>
+        <div class="highlight-card">
+          <h3>Secure global checkout</h3>
+          <p>Payments handled through trusted third-party providers, with encrypted data.</p>
+        </div>
+      </div>
     </section>
 
+    <!-- SHOP -->
+    <section id="shop" class="section section-shop">
+      <div class="container">
+        <div class="section-header">
+          <h2>Shop Tara's Secret</h2>
+          <p>
+            A simple view of your product range. Prices are shown in Nigerian naira (NGN).
+            Later we’ll connect each product to secure payment pages and add live currency displays.
+          </p>
+        </div>
 
-    <hr />
+        <div class="product-grid">
+          <!-- Lip gloss -->
+          <article class="product-card">
+            <p class="product-tag">Lip gloss</p>
+            <h3>Glass Glow Lip Gloss</h3>
+            <p class="product-desc">
+              High-shine, non-sticky finish that layers beautifully over your favourite lip color.
+            </p>
+            <p class="product-price">₦7,500</p>
+            <p class="product-note">Example price – will be updated to your final catalogue.</p>
+            <button type="button" class="btn btn-disabled" disabled>Buy now (coming soon)</button>
+          </article>
 
-            <!-- ABOUT SECTION -->
-    <section id="about">
-      <h2>About Tara's Secret</h2>
+          <article class="product-card">
+            <p class="product-tag">Lip gloss</p>
+            <h3>Soft Tint Lip Gloss</h3>
+            <p class="product-desc">
+              Sheer colour with a moisturising feel for soft, everyday shine.
+            </p>
+            <p class="product-price">₦7,000</p>
+            <p class="product-note">Example price – will be updated.</p>
+            <button type="button" class="btn btn-disabled" disabled>Buy now (coming soon)</button>
+          </article>
 
-      <h3>Our story</h3>
-      <p>
-        At Tara’s Secret, we create lip glosses and lip plumps designed to enhance your features—not hide them.
-        Our products are made for every skin tone, every skin type, and every person who wants to feel beautiful
-        in their own way.
-      </p>
-      <p>
-        Because the real secret is this: you are already beautiful — our gloss just helps you shine.
-      </p>
+          <!-- Lip plump -->
+          <article class="product-card">
+            <p class="product-tag">Lip plump</p>
+            <h3>Plush Plump Lip Plumper</h3>
+            <p class="product-desc">
+              Gentle tingling plumper that adds volume and glow while keeping lips hydrated.
+            </p>
+            <p class="product-price">₦8,200</p>
+            <p class="product-note">Example price – will be updated.</p>
+            <button type="button" class="btn btn-disabled" disabled>Buy now (coming soon)</button>
+          </article>
 
-      <h3>Our mission</h3>
-      <p>
-        To redefine beauty by creating products that help you feel soft, confident, and authentically yourself —
-        without pressure, without comparison, without the world’s unrealistic standards.
-      </p>
+          <!-- Lip scrub -->
+          <article class="product-card">
+            <p class="product-tag">Lip scrub</p>
+            <h3>Sugar Kiss Lip Scrub</h3>
+            <p class="product-desc">
+              Sugar-based scrub that buffs away dry skin and leaves your lips smooth and prepped.
+            </p>
+            <p class="product-price">₦6,800</p>
+            <p class="product-note">Example price – will be updated.</p>
+            <button type="button" class="btn btn-disabled" disabled>Buy now (coming soon)</button>
+          </article>
 
-      <!-- About / brand image -->
-      <img src="assets/css/about-main.png" alt="Tara's Secret brand and lip care collection" />
+          <!-- Lip oil -->
+          <article class="product-card">
+            <p class="product-tag">Lip oil</p>
+            <h3>Velvet Care Lip Oil</h3>
+            <p class="product-desc">
+              Lightweight, nourishing oil that gives a soft gloss finish and lasting comfort.
+            </p>
+            <p class="product-price">₦7,900</p>
+            <p class="product-note">Example price – will be updated.</p>
+            <button type="button" class="btn btn-disabled" disabled>Buy now (coming soon)</button>
+          </article>
 
+          <!-- Lip balm -->
+          <article class="product-card">
+            <p class="product-tag">Lip balm</p>
+            <h3>Soft Cloud Lip Balm</h3>
+            <p class="product-desc">
+              Everyday hydrating balm that cushions and protects your lips through every season.
+            </p>
+            <p class="product-price">₦6,000</p>
+            <p class="product-note">Example price – will be updated.</p>
+            <button type="button" class="btn btn-disabled" disabled>Buy now (coming soon)</button>
+          </article>
+        </div>
+
+        <div class="currency-panel">
+          <h3>Currency & international shoppers</h3>
+          <p>
+            Base prices are listed in Nigerian naira (NGN). For international customers, here are
+            approximate values in other currencies. Your bank may show slightly different amounts.
+          </p>
+          <ul>
+            <li>Glass Glow Lip Gloss – ₦7,500 (about $12 / €11 / £9)</li>
+            <li>Plush Plump Lip Plumper – ₦8,200 (about $14 / €13 / £11)</li>
+            <li>Sugar Kiss Lip Scrub – ₦6,800 (about $10 / €9 / £8)</li>
+            <li>Velvet Care Lip Oil – ₦7,900 (about $13 / €12 / £10)</li>
+            <li>Soft Cloud Lip Balm – ₦6,000 (about $9 / €8 / £7)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+    <!-- HOW IT WORKS -->
+    <section class="section section-how">
+      <div class="container">
+        <div class="section-header">
+          <h2>How ordering works</h2>
+          <p>We keep things simple and secure for shoppers in Nigeria and worldwide.</p>
+        </div>
 
-
-    <hr />
-
-        <!-- CONTACT SECTION -->
-    <section id="contact">
-      <h2>Contact & Support</h2>
-      <p>
-        If you have questions about orders, products or shipping, you can reach out using
-        the details below.
-      </p>
-      <ul>
-        <li>
-          <strong>Phone:</strong> +2348123436915
-        </li>
-        <li>
-          <strong>Email:</strong>
-          <a href="mailto:tarassecrete@gmail.com">tarassecrete@gmail.com</a>
-        </li>
-        <li>
-          <strong>WhatsApp:</strong> +234812 343 6915
-        </li>
-        <li>
-          <strong>Instagram:</strong>
-          <a href="https://www.instagram.com/taras.ecret?igsh=MWtieDllNGs1YWV5Zg==" target="_blank" rel="noopener noreferrer">
-            @taras.ecret
-          </a>
-        </li>
-        <li>
-          <strong>TikTok:</strong>
-          <a href="https://www.tiktok.com/@tarassecrett?_r=1&_t=ZS-91qWs9c8bGJ" target="_blank" rel="noopener noreferrer">
-            @tarassecrett
-          </a>
-        </li>
-        <li>
-          <strong>Location:</strong> Online beauty brand based in Nigeria
-        </li>
-      </ul>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">1</span>
+            <h3>Browse & choose</h3>
+            <p>
+              Explore the Tara's Secret collection and pick the glosses and lip care you love.
+            </p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">2</span>
+            <h3>Secure payment</h3>
+            <p>
+              When you’re ready to check out, you’ll be taken to a trusted payment partner page
+              where your details are encrypted and never stored on this site.
+            </p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">3</span>
+            <h3>We prepare your order</h3>
+            <p>
+              After payment, you’ll receive an email confirmation and we’ll get your order ready
+              using the delivery details you provide.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="section section-about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2>About Tara's Secret</h2>
+
+          <h3>Our story</h3>
+          <p>
+            At Tara’s Secret, we create lip glosses and lip plumps designed to enhance your features—not hide them.
+            Our products are made for every skin tone, every skin type, and every person who wants to feel beautiful
+            in their own way.
+          </p>
+          <p>
+            Because the real secret is this: you are already beautiful — our gloss just helps you shine.
+          </p>
+
+          <h3>Our mission</h3>
+          <p>
+            To redefine beauty by creating products that help you feel soft, confident, and authentically yourself —
+            without pressure, without comparison, without the world’s unrealistic standards.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <!-- uses the second file you uploaded -->
+          <img src="assets/css/about-main.png" alt="Tara's Secret brand and lip care collection" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact & support</h2>
+          <p>
+            If you have questions about orders, products or shipping, you can reach out using the details below.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Customer support</h3>
+            <ul>
+              <li><strong>Phone:</strong> +2348123436915</li>
+              <li><strong>Email:</strong> <a href="mailto:tarassecrete@gmail.com">tarassecrete@gmail.com</a></li>
+              <li><strong>WhatsApp:</strong> +234812 343 6915</li>
+              <li><strong>Location:</strong> Online beauty brand based in Nigeria</li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3>Social</h3>
+            <ul>
+              <li>
+                <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/taras.ecret?igsh=MWtieDllNGs1YWV5Zg==" target="_blank" rel="noopener noreferrer">
+                  @taras.ecret
+                </a>
+              </li>
+              <li>
+                <strong>TikTok:</strong>
+                <a href="https://www.tiktok.com/@tarassecrett?_r=1&_t=ZS-91qWs9c8bGJ" target="_blank" rel="noopener noreferrer">
+                  @tarassecrett
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY / TERMS -->
+    <section class="section section-legal">
+      <div class="container legal-text">
+        <h2>Privacy & security</h2>
+        <p>
+          Tara's Secret respects your privacy. When you place an order, our payment partner
+          collects information such as your name, email address and delivery details so
+          your order can be processed and shipped.
+        </p>
+        <p>
+          Payments are processed securely by a third-party payment provider (such as Paystack
+          or Flutterwave). Your card or bank details are handled and stored by them using
+          their own encryption and security controls. Tara's Secret does not store your full
+          card number or CVV on this website.
+        </p>
+        <p>
+          We may use your email address to send you order updates and, if you agree, news
+          about Tara's Secret products and offers. You can ask us to update or delete your
+          personal information at any time by contacting us at
+          <a href="mailto:tarassecrete@gmail.com">tarassecrete@gmail.com</a>.
+        </p>
+      </div>
+    </section>
   </main>
 
-  <hr />
-
   <!-- FOOTER -->
-  <footer>
-    <p>&copy; <span id="year"></span> Tara's Secret. All rights reserved.</p>
-    <p>
-      This website will use a secure third-party payment provider so that sensitive
-      payment information is encrypted and not stored on this site.
-    </p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Tara's Secret. All rights reserved.</p>
+      <p class="footer-note">
+        This website uses secure third-party payment providers so that sensitive payment information
+        is encrypted and not stored on this site.
+      </p>
+    </div>
   </footer>
 
   <script>
-    // Simple script to always show the current year in the footer
+    // Current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
