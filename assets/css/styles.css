@@ -1,4 +1,4 @@
-/* --------- Basic page setup --------- */
+/* ---------- Global reset-ish ---------- */
 *,
 *::before,
 *::after {
@@ -8,147 +8,468 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #3A3A3A;          /* Elegant charcoal */
-  background-color: #FFF7FB; /* Very soft pink background */
+  color: #3A3A3A;           /* Elegant charcoal */
+  background: #FFF7FB;      /* very soft pink */
   line-height: 1.6;
 }
 
-/* Keep content nicely centered */
-main,
-header,
-footer {
-  max-width: 900px;
+/* Layout container */
+.container {
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0 1.5rem;
 }
 
-/* --------- Header --------- */
-header {
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #FFC8E0; /* Soft blush */
-}
-
-header h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  color: #FF3FA6; /* Signature pink */
-}
-
-header p {
-  margin: 0.2rem 0 0.8rem;
-  color: #E69BB2; /* Dusty rose tagline */
-}
-
-/* Navigation */
-nav {
-  margin-top: 0.5rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #FF3FA6;  /* Signature pink */
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-right: 0.8rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-nav a:hover {
+.btn-primary {
+  background: #FF3FA6;   /* signature pink */
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.03);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #FF3FA6;
+  border: 1px solid #FF3FA6;
+}
+
+.btn-ghost:hover {
+  background: #FFE0F1;
+}
+
+.btn-link {
+  background: transparent;
+  color: #FF3FA6;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn-link:hover {
   text-decoration: underline;
 }
 
-/* --------- Sections --------- */
-section {
-  margin: 1.8rem 0;
-  padding: 1.2rem 1rem;
-  background-color: #FFFFFF;    /* White cards */
-  border-radius: 0.75rem;
-  border: 1px solid #FFC8E0;    /* Soft blush border */
+.btn-disabled {
+  background: #F5F5F5;
+  color: #9CA3AF;
+  border: 1px dashed #D1D5DB;
 }
 
-section h2 {
-  margin-top: 0;
-  margin-bottom: 0.6rem;
-  font-size: 1.4rem;
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 247, 251, 0.9);
+  border-bottom: 1px solid #FFC8E0;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FF3FA6;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1rem;
   color: #3A3A3A;
 }
 
-/* Hero section emphasis */
-#hero {
-  background: linear-gradient(135deg, #FFC8E0, #FFF7FB); /* Soft blush to light pink */
-  border-color: #E69BB2; /* Dusty rose border */
+.brand-tagline {
+  font-size: 0.8rem;
+  color: #E69BB2;
 }
 
-#hero h2 {
-  font-size: 1.6rem;
-  color: #FF3FA6; /* Signature pink headline */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
 }
 
-#hero p strong {
+.nav-links a {
+  text-decoration: none;
+  color: #3A3A3A;
+}
+
+.nav-links a:hover {
   color: #FF3FA6;
 }
 
-/* Shop section text spacing */
-#shop p {
-  margin-bottom: 0.6rem;
+/* ---------- Hero ---------- */
+.hero {
+  padding: 2.5rem 0 2rem;
 }
 
-/* Contact list */
-#contact ul {
-  padding-left: 1.2rem;
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
 }
 
-#contact li {
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.8rem;
+  color: #FF3FA6;
+  margin: 0 0 0.4rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.7rem;
+  font-size: 2.1rem;
+}
+
+.hero-body {
+  margin: 0 0 0.7rem;
+  color: #4B5563;
+}
+
+.hero-highlight {
+  margin: 0 0 1rem;
+  color: #FF3FA6;
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hero-badges span {
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: #FFE6F3;
+  color: #A21B5B;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 1.4rem;
+  object-fit: cover;
+  border: 1px solid #FFC8E0;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 2.2rem 0;
+}
+
+.section-header {
+  text-align: left;
+  margin-bottom: 1.6rem;
+}
+
+.section-header h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.5rem;
+}
+
+.section-header p {
+  margin: 0;
+  color: #4B5563;
+}
+
+/* Highlights */
+.section-highlights {
+  background: #FFF0F6;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.highlight-card {
+  background: #FFFFFF;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  border: 1px solid #FFC8E0;
+  font-size: 0.93rem;
+}
+
+/* ---------- Shop / products ---------- */
+.section-shop {
+  background: #FFFFFF;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.product-card {
+  background: #FFFFFF;
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid #FFE0F1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.product-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A21B5B;
+  margin: 0;
+}
+
+.product-card h3 {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+.product-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4B5563;
+}
+
+.product-price {
+  margin: 0.3rem 0 0.1rem;
+  font-weight: 700;
+  color: #3A3A3A;
+}
+
+.product-note {
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  color: #6B7280;
+}
+
+.product-card .btn-disabled {
+  margin-top: auto;
+}
+
+/* Currency panel */
+.currency-panel {
+  margin-top: 1.8rem;
+  padding: 1rem;
+  border-radius: 0.9rem;
+  background: #FFF0F6;
+  border: 1px dashed #FFC8E0;
+  font-size: 0.9rem;
+}
+
+.currency-panel h3 {
+  margin-top: 0;
+}
+
+/* ---------- How it works ---------- */
+.section-how {
+  background: #FFF7FB;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.step-card {
+  background: #FFFFFF;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  border: 1px solid #FFE0F1;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #FFC8E0;
+  color: #A21B5B;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- About ---------- */
+.section-about {
+  background: #FFFFFF;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text h2 {
+  margin-top: 0;
+}
+
+.about-text h3 {
+  margin-bottom: 0.3rem;
+}
+
+.about-text p {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  color: #4B5563;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 1.4rem;
+  border: 1px solid #FFC8E0;
+  object-fit: cover;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Contact ---------- */
+.section-contact {
+  background: #FFF0F6;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.contact-card {
+  background: #FFFFFF;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  border: 1px solid #FFE0F1;
+}
+
+.contact-card ul {
+  padding-left: 1.1rem;
+  margin: 0.6rem 0 0;
+}
+
+.contact-card li {
   margin-bottom: 0.4rem;
 }
 
-/* Links in content */
-a {
-  color: #FF3FA6; /* Signature pink */
+/* ---------- Legal ---------- */
+.section-legal {
+  background: #FFFFFF;
 }
 
-a:hover {
-  color: #E69BB2; /* Dusty rose hover */
+.legal-text p {
+  color: #4B5563;
 }
 
-/* Images in hero and about sections */
-#hero img,
-#about img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: 0.9rem;
-  margin-top: 0.9rem;
-  border: 1px solid #FFC8E0; /* Soft blush frame around images */
-}
-
-/* --------- Footer --------- */
-footer {
+/* ---------- Footer ---------- */
+.site-footer {
   border-top: 1px solid #FFC8E0;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  background: #FFFFFF;
+}
+
+.footer-inner {
+  padding: 1rem 0 1.5rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: #555555;
+  font-size: 0.85rem;
+  color: #6B7280;
 }
 
-footer p {
-  margin: 0.2rem 0;
+.footer-note {
+  max-width: 520px;
+  margin: 0.3rem auto 0;
 }
 
-/* --------- Responsive (phones) --------- */
-@media (max-width: 600px) {
-  main,
-  header,
-  footer {
-    padding: 1rem;
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  header h1 {
-    font-size: 1.5rem;
+  .hero {
+    padding-top: 2rem;
   }
 
-  section {
-    padding: 1rem;
+  .highlights-grid,
+  .product-grid,
+  .steps-grid,
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-links {
+    display: none; /* simple mobile nav behaviour */
+  }
+}
+
+@media (max-width: 650px) {
+  .highlights-grid,
+  .product-grid,
+  .steps-grid,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 }
