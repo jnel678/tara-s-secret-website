@@ -236,8 +236,8 @@ export default function AdminOrdersPage() {
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm text-[#2D1F1F] dark:text-white">
-                          {order.items.map((item, i) => (
-                            <p key={i} className="truncate max-w-[200px]">
+                          {order.items.map((item) => (
+                            <p key={`${order.id}-${item.productId}`} className="truncate max-w-[200px]">
                               {item.quantity}x {item.productName}
                             </p>
                           ))}
