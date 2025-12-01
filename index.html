@@ -2,10 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tara's Secret</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tara's Secret | Lip Care & Gloss</title>
 </head>
 <body>
-  <h1>Tara's Secret</h1>
-  <p>Welcome to Tara's Secret lip care. This is a temporary homepage. The full shop is coming soon.</p>
+  <!-- HEADER -->
+  <header>
+    <h1>Tara's Secret</h1>
+    <p>Gloss. Care. Confidence.</p>
+
+    <nav>
+      <a href="#shop">Shop</a> |
+      <a href="#about">About</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <hr />
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <h2>Luxurious lip care, made to be seen.</h2>
+      <p>
+        Tara's Secret is a lip care brand offering lip gloss, lip plump, lip scrub,
+        lip oils and lip balm. Our products are created to keep your lips soft, smooth
+        and ready for close-ups.
+      </p>
+      <p><strong>Online store based in Nigeria, shipping worldwide.</strong></p>
+    </section>
+
+    <hr />
+
+    <!-- SHOP SECTION (we will expand this later) -->
+    <section id="shop">
+      <h2>Shop Tara's Secret (coming next)</h2>
+      <p>
+        Very soon this section will show your products (lip gloss, lip plump, lip scrub,
+        lip oils and lip balm) with prices in naira (NGN), US dollars (USD), euros (EUR)
+        and pounds (GBP).
+      </p>
+      <p>
+        We will also connect secure payment buttons that use a third-party payment provider
+        so your customers can pay safely from anywhere in the world.
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2>About Tara's Secret</h2>
+      <p>
+        Tara's Secret is a lip-first beauty brand. The focus is on hydrating, comfortable
+        formulas that make lips feel as good as they look. The collection is designed for
+        everyday wear and special occasions.
+      </p>
+      <p>
+        The brand is based in Nigeria and aims to serve customers locally and internationally
+        with reliable quality and a simple, secure shopping experience.
+      </p>
+    </section>
+
+    <hr />
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact & Support</h2>
+      <p>
+        If you have questions about orders, products or shipping, you can reach out using
+        the details below.
+      </p>
+      <ul>
+        <li>
+          Email:
+          <!-- replace this with your real business email when you are ready -->
+          <a href="mailto:hello@tarassecret.com">hello@tarassecret.com</a>
+        </li>
+        <li>
+          Instagram: <!-- replace # with your real page later -->
+          <a href="#" target="_blank" rel="noopener noreferrer">@tarassecret</a>
+        </li>
+        <li>
+          TikTok: <!-- replace # with your real page later -->
+          <a href="#" target="_blank" rel="noopener noreferrer">@tarassecret</a>
+        </li>
+        <li>Location: Online beauty brand based in Nigeria</li>
+      </ul>
+    </section>
+  </main>
+
+  <hr />
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="year"></span> Tara's Secret. All rights reserved.</p>
+    <p>
+      This website will use a secure third-party payment provider so that sensitive
+      payment information is encrypted and not stored on this site.
+    </p>
+  </footer>
+
+  <script>
+    // Simple script to always show the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
