@@ -8,12 +8,12 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #222222;
-  background-color: #fff7fb; /* soft light pink-lilac background, we can match your exact theme later */
+  color: #3A3A3A;          /* Elegant charcoal */
+  background-color: #FFF7FB; /* Very soft pink background */
   line-height: 1.6;
 }
 
-/* Container to keep content centered */
+/* Keep content nicely centered */
 main,
 header,
 footer {
@@ -26,17 +26,18 @@ footer {
 header {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #f3c4dd;
+  border-bottom: 1px solid #FFC8E0; /* Soft blush */
 }
 
 header h1 {
   margin: 0;
   font-size: 1.8rem;
+  color: #FF3FA6; /* Signature pink */
 }
 
 header p {
   margin: 0.2rem 0 0.8rem;
-  color: #555555;
+  color: #E69BB2; /* Dusty rose tagline */
 }
 
 /* Navigation */
@@ -46,7 +47,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #c02664; /* accent color (can be changed to your brand colour) */
+  color: #FF3FA6;  /* Signature pink */
   font-weight: 600;
   margin-right: 0.8rem;
 }
@@ -59,32 +60,34 @@ nav a:hover {
 section {
   margin: 1.8rem 0;
   padding: 1.2rem 1rem;
-  background-color: #ffffff;
+  background-color: #FFFFFF;    /* White cards */
   border-radius: 0.75rem;
-  border: 1px solid #f3c4dd;
+  border: 1px solid #FFC8E0;    /* Soft blush border */
 }
 
 section h2 {
   margin-top: 0;
   margin-bottom: 0.6rem;
   font-size: 1.4rem;
+  color: #3A3A3A;
 }
 
 /* Hero section emphasis */
 #hero {
-  background: linear-gradient(135deg, #ffe4f0, #fff7fb);
-  border-color: #f3c4dd;
+  background: linear-gradient(135deg, #FFC8E0, #FFF7FB); /* Soft blush to light pink */
+  border-color: #E69BB2; /* Dusty rose border */
 }
 
 #hero h2 {
   font-size: 1.6rem;
+  color: #FF3FA6; /* Signature pink headline */
 }
 
 #hero p strong {
-  color: #c02664;
+  color: #FF3FA6;
 }
 
-/* Shop section (placeholder for products) */
+/* Shop section text spacing */
 #shop p {
   margin-bottom: 0.6rem;
 }
@@ -100,16 +103,27 @@ section h2 {
 
 /* Links in content */
 a {
-  color: #c02664;
+  color: #FF3FA6; /* Signature pink */
 }
 
 a:hover {
-  color: #9f1239;
+  color: #E69BB2; /* Dusty rose hover */
+}
+
+/* Images in hero and about sections */
+#hero img,
+#about img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  margin-top: 0.9rem;
+  border: 1px solid #FFC8E0; /* Soft blush frame around images */
 }
 
 /* --------- Footer --------- */
 footer {
-  border-top: 1px solid #f3c4dd;
+  border-top: 1px solid #FFC8E0;
   padding-top: 1rem;
   padding-bottom: 1.5rem;
   margin-top: 1.5rem;
@@ -122,18 +136,7 @@ footer p {
   margin: 0.2rem 0;
 }
 
-/* Responsive: make sure it looks fine on phones */
-/* Images in hero and about sections */
-#hero img,
-#about img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: 0.9rem;
-  margin-top: 0.9rem;
-  border: 1px solid #f3c4dd;
-}
-
+/* --------- Responsive (phones) --------- */
 @media (max-width: 600px) {
   main,
   header,
