@@ -557,19 +557,176 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Tara's Secret. All rights reserved.</p>
-      <p class="footer-note">
-        This website uses secure third-party payment providers so that sensitive payment information
-        is encrypted and not stored on this site.
-      </p>
-    </div>
-  </footer>
-
-  <script>
+    <script>
     // Current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Simple cart logic (client-side only)
+    (function () {
+      const cartEmptyEl = document.getElementById('cart-empty');
+      const cartContentEl = document.getElementById('cart-content');
+      const cartItemsBody = document.getElementById('cart-items');
+      const cartTotalAmount = document.getElementById('cart-total-amount');
+      const clearCartBtn = document.getElementById('clear-cart');
+      const copyBankBtn = document.getElementById('copy-bank-details');
+
+      if (!cartItemsBody) {
+        return; // safety
+      }
+
+      let cart = [];
+
+      function loadCart() {
+        try {
+          const saved = window.localStorage.getItem('tarasSecretCart');
+          if (saved) {
+            cart = JSON.parse(saved);
+          }
+        } catch (e) {
+          cart = [];
+        }
+        renderCart();
+      }
+
+      function saveCart() {
+        try {
+          window.localStorage.setItem('tarasSecretCart', JSON.stringify(cart));
+        } catch (e) {
+          // ignore
+        }
+      }
+
+      function formatNaira(amount) {
+        return '₦' + amount.toLocaleString('en-NG');
+      }
+
+      function renderCart() {
+        if (!cart.length) {
+          cartEmptyEl.style.display = 'block';
+          cartContentEl.style.display = 'none';
+          cartTotalAmount.textContent = '₦0';
+          cartItemsBody.innerHTML = '';
+          return;
+        }
+
+        cartEmptyEl.style.display = 'none';
+        cartContentEl.style.display = 'block';
+
+        let total = 0;
+        cartItemsBody.innerHTML = '';
+
+        cart.forEach(function (item, index) {
+          const row = document.createElement('tr');
+
+          const nameTd = document.createElement('td');
+          nameTd.textContent = item.name;
+          row.appendChild(nameTd);
+
+          const qtyTd = document.createElement('td');
+          qtyTd.textContent = item.quantity;
+          row.appendChild(qtyTd);
+
+          const priceTd = document.createElement('td');
+          priceTd.textContent = item.price.toLocaleString('en-NG');
+          row.appendChild(priceTd);
+
+          const subtotal = item.price * item.quantity;
+          total += subtotal;
+
+          const subtotalTd = document.createElement('td');
+          subtotalTd.textContent = subtotal.toLocaleString('en-NG');
+          row.appendChild(subtotalTd);
+
+          const removeTd = document.createElement('td');
+          const removeBtn = document.createElement('button');
+          removeBtn.className = 'cart-remove-btn';
+          removeBtn.type = 'button';
+          removeBtn.textContent = 'Remove';
+          removeBtn.addEventListener('click', function () {
+            removeItem(index);
+          });
+          removeTd.appendChild(removeBtn);
+          row.appendChild(removeTd);
+
+          cartItemsBody.appendChild(row);
+        });
+
+        cartTotalAmount.textContent = formatNaira(total);
+      }
+
+      function addToCart(id, name, price) {
+        price = Number(price);
+        if (!id || !name || !price) return;
+
+        const existing = cart.find(function (item) {
+          return item.id === id;
+        });
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({
+            id: id,
+            name: name,
+            price: price,
+            quantity: 1
+          });
+        }
+
+        saveCart();
+        renderCart();
+      }
+
+      function removeItem(index) {
+        cart.splice(index, 1);
+        saveCart();
+        renderCart();
+      }
+
+      // Attach listeners to "Add to cart" buttons
+      const addButtons = document.querySelectorAll('.add-to-cart');
+      addButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const id = btn.getAttribute('data-id');
+          const name = btn.getAttribute('data-name');
+          const price = btn.getAttribute('data-price');
+          addToCart(id, name, price);
+        });
+      });
+
+      // Clear cart
+      if (clearCartBtn) {
+        clearCartBtn.addEventListener('click', function () {
+          cart = [];
+          saveCart();
+          renderCart();
+        });
+      }
+
+      // Copy bank details to clipboard
+      if (copyBankBtn && navigator.clipboard) {
+        copyBankBtn.addEventListener('click', function () {
+          const text = 'Moniepoint\nAccount name: Emeneka Ifeyinwa\nAccount number: 8123436915';
+          navigator.clipboard.writeText(text).then(
+            function () {
+              copyBankBtn.textContent = 'Bank details copied ✔';
+              setTimeout(function () {
+                copyBankBtn.textContent = 'Copy bank details';
+              }, 2000);
+            },
+            function () {
+              alert('Copy failed. You can copy the details manually.');
+            }
+          );
+        });
+      }
+
+      loadCart();
+    })();
   </script>
 </body>
 </html>
+
