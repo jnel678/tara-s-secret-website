@@ -92,6 +92,65 @@
             Later we’ll connect each product to secure payment pages and add live currency displays.
           </p>
         </div>
+            <div class="cart-panel" id="cart">
+      <h3>Your cart</h3>
+      <p class="cart-intro">
+        Add items to your cart to see your total. To place an order, make a transfer to the account below
+        and send your proof of payment on WhatsApp with your cart details and delivery information.
+      </p>
+
+      <div id="cart-empty" class="cart-empty">Your cart is currently empty.</div>
+
+      <div id="cart-content" class="cart-content" style="display:none;">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Price (₦)</th>
+              <th>Subtotal (₦)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-items"></tbody>
+        </table>
+
+        <div class="cart-total-row">
+          <span>Total:</span>
+          <span id="cart-total-amount">₦0</span>
+        </div>
+
+        <button type="button" class="btn btn-ghost" id="clear-cart">Clear cart</button>
+      </div>
+
+      <div class="bank-details">
+        <h4>How to pay</h4>
+        <ol>
+          <li>Add the products you want to your cart and confirm the total amount.</li>
+          <li>Make a transfer to the account below:</li>
+        </ol>
+        <p class="bank-line"><strong>Bank:</strong> Moniepoint</p>
+        <p class="bank-line"><strong>Account name:</strong> Emeneka Ifeyinwa</p>
+        <p class="bank-line"><strong>Account number:</strong> 8123436915</p>
+
+        <p>After payment, send your proof of payment and your order details to WhatsApp:</p>
+        <div class="cart-actions">
+          <button type="button" class="btn btn-ghost" id="copy-bank-details">
+            Copy bank details
+          </button>
+          <a class="btn btn-primary" href="http://wa.me/2348123436915" target="_blank" rel="noopener noreferrer">
+            Send proof on WhatsApp
+          </a>
+        </div>
+
+        <p class="cart-note">
+          Please don’t share your full card details on WhatsApp. A screenshot or transaction reference is enough.
+        </p>
+      </div>
+    </div>
+
+    <div class="product-grid">
+
 
         <            <!-- LIP GLOSS (7 shades) -->
       <article class="product-card">
