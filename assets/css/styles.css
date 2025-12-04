@@ -158,6 +158,12 @@ body {
 .nav-links a:hover {
   color: #FF3FA6;
 }
+.nav-cta {
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  margin-left: 0.5rem;
+}
+
 
 /* ---------- Hero ---------- */
 .hero {
