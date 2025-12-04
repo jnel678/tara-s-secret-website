@@ -662,9 +662,9 @@
     ...
   </script>
 
-      <script>
+        <script>
     (function () {
-      // Current year in footer
+      // Year in footer
       const yearEl = document.getElementById('year');
       if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
@@ -680,10 +680,8 @@
       const cartCountEl = document.getElementById('cart-count');
       const cartToastEl = document.getElementById('cart-toast');
 
-      // If we don't have the cart on this page, stop here
-      if (!cartItemsBody) {
-        return;
-      }
+      // If the page has no cart table, stop
+      if (!cartItemsBody) return;
 
       let cart = [];
 
@@ -721,7 +719,7 @@
         try {
           window.localStorage.setItem('tarasSecretCart', JSON.stringify(cart));
         } catch (e) {
-          // ignore
+          // ignore storage errors
         }
       }
 
@@ -748,18 +746,48 @@
         cart.forEach(function (item, index) {
           const row = document.createElement('tr');
 
+          // Item name
           const nameTd = document.createElement('td');
           nameTd.textContent = item.name;
           row.appendChild(nameTd);
 
+          // Quantity with + / − controls
           const qtyTd = document.createElement('td');
-          qtyTd.textContent = item.quantity;
+          const qtyControl = document.createElement('div');
+          qtyControl.className = 'cart-qty-control';
+
+          const minusBtn = document.createElement('button');
+          minusBtn.type = 'button';
+          minusBtn.className = 'cart-qty-btn';
+          minusBtn.textContent = '−';
+          minusBtn.addEventListener('click', function () {
+            changeQuantity(index, -1);
+          });
+
+          const qtyValue = document.createElement('span');
+          qtyValue.className = 'cart-qty-value';
+          qtyValue.textContent = item.quantity;
+
+          const plusBtn = document.createElement('button');
+          plusBtn.type = 'button';
+          plusBtn.className = 'cart-qty-btn';
+          plusBtn.textContent = '+';
+          plusBtn.addEventListener('click', function () {
+            changeQuantity(index, 1);
+          });
+
+          qtyControl.appendChild(minusBtn);
+          qtyControl.appendChild(qtyValue);
+          qtyControl.appendChild(plusBtn);
+          qtyTd.appendChild(qtyControl);
           row.appendChild(qtyTd);
 
+          // Single item price
           const priceTd = document.createElement('td');
           priceTd.textContent = item.price.toLocaleString('en-NG');
           row.appendChild(priceTd);
 
+          // Subtotal
           const subtotal = item.price * item.quantity;
           total += subtotal;
 
@@ -767,6 +795,7 @@
           subtotalTd.textContent = subtotal.toLocaleString('en-NG');
           row.appendChild(subtotalTd);
 
+          // Remove button
           const removeTd = document.createElement('td');
           const removeBtn = document.createElement('button');
           removeBtn.className = 'cart-remove-btn';
@@ -809,6 +838,23 @@
         showToast(name + ' added to cart');
       }
 
+      function changeQuantity(index, delta) {
+        const item = cart[index];
+        if (!item) return;
+
+        item.quantity += delta;
+
+        if (item.quantity <= 0) {
+          cart.splice(index, 1);
+          showToast('Item removed from cart');
+        } else {
+          showToast('Quantity updated');
+        }
+
+        saveCart();
+        renderCart();
+      }
+
       function removeItem(index) {
         cart.splice(index, 1);
         saveCart();
@@ -840,7 +886,8 @@
       // Copy bank details to clipboard
       if (copyBankBtn && navigator.clipboard) {
         copyBankBtn.addEventListener('click', function () {
-          const text = 'Moniepoint\nAccount name: Emeneka Ifeyinwa\nAccount number: 8123436915';
+          const text =
+            'Moniepoint\nAccount name: Emeneka Ifeyinwa\nAccount number: 8123436915';
           navigator.clipboard.writeText(text).then(
             function () {
               showToast('Bank details copied');
@@ -856,6 +903,9 @@
       loadCart();
     })();
   </script>
+</body>
+</html>
+
 </body>
 </html>
 
