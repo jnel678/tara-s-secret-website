@@ -21,12 +21,16 @@
         </div>
       </div>
 
-      <nav class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#about">Our story</a>
-        <a href="#contact">Contact</a>
-      </nav>
+          <nav class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#cart">
+        Cart
+        <span id="cart-count" class="nav-cart-count">0</span>
+      </a>
+    </nav>
+
 
       <a href="#shop" class="btn btn-ghost">Shop now</a>
     </div>
@@ -559,6 +563,12 @@
   </main>
 
   <!-- FOOTER -->
+            <div id="cart-toast" class="cart-toast"></div>
+
+  <script>
+    ...
+  </script>
+
     <script>
     // Current year in footer
     const yearEl = document.getElementById('year');
