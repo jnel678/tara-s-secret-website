@@ -569,33 +569,54 @@
     ...
   </script>
 
-    <script>
-    // Current year in footer
-    const yearEl = document.getElementById('year');
-    if (yearEl) {
-      yearEl.textContent = new Date().getFullYear();
-    }
-
-    // Simple cart logic (client-side only)
+      <script>
     (function () {
+      // Current year in footer
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // Cart elements
       const cartEmptyEl = document.getElementById('cart-empty');
       const cartContentEl = document.getElementById('cart-content');
       const cartItemsBody = document.getElementById('cart-items');
       const cartTotalAmount = document.getElementById('cart-total-amount');
       const clearCartBtn = document.getElementById('clear-cart');
       const copyBankBtn = document.getElementById('copy-bank-details');
+      const cartCountEl = document.getElementById('cart-count');
+      const cartToastEl = document.getElementById('cart-toast');
 
+      // If we don't have the cart on this page, stop here
       if (!cartItemsBody) {
-        return; // safety
+        return;
       }
 
       let cart = [];
+
+      function updateCartCount() {
+        if (!cartCountEl) return;
+        const count = cart.reduce(function (sum, item) {
+          return sum + item.quantity;
+        }, 0);
+        cartCountEl.textContent = count;
+      }
+
+      function showToast(message) {
+        if (!cartToastEl) return;
+        cartToastEl.textContent = message;
+        cartToastEl.classList.add('cart-toast--visible');
+        clearTimeout(showToast._timeout);
+        showToast._timeout = setTimeout(function () {
+          cartToastEl.classList.remove('cart-toast--visible');
+        }, 2000);
+      }
 
       function loadCart() {
         try {
           const saved = window.localStorage.getItem('tarasSecretCart');
           if (saved) {
-            cart = JSON.parse(saved);
+            cart = JSON.parse(saved) || [];
           }
         } catch (e) {
           cart = [];
@@ -611,16 +632,17 @@
         }
       }
 
-      function formatNaira(amount) {
-        return '₦' + amount.toLocaleString('en-NG');
-      }
-
       function renderCart() {
+        if (!cartEmptyEl || !cartContentEl || !cartItemsBody || !cartTotalAmount) {
+          return;
+        }
+
         if (!cart.length) {
           cartEmptyEl.style.display = 'block';
           cartContentEl.style.display = 'none';
           cartTotalAmount.textContent = '₦0';
           cartItemsBody.innerHTML = '';
+          updateCartCount();
           return;
         }
 
@@ -666,7 +688,8 @@
           cartItemsBody.appendChild(row);
         });
 
-        cartTotalAmount.textContent = formatNaira(total);
+        cartTotalAmount.textContent = '₦' + total.toLocaleString('en-NG');
+        updateCartCount();
       }
 
       function addToCart(id, name, price) {
@@ -690,12 +713,14 @@
 
         saveCart();
         renderCart();
+        showToast(name + ' added to cart');
       }
 
       function removeItem(index) {
         cart.splice(index, 1);
         saveCart();
         renderCart();
+        showToast('Item removed from cart');
       }
 
       // Attach listeners to "Add to cart" buttons
@@ -715,6 +740,7 @@
           cart = [];
           saveCart();
           renderCart();
+          showToast('Cart cleared');
         });
       }
 
@@ -724,10 +750,7 @@
           const text = 'Moniepoint\nAccount name: Emeneka Ifeyinwa\nAccount number: 8123436915';
           navigator.clipboard.writeText(text).then(
             function () {
-              copyBankBtn.textContent = 'Bank details copied ✔';
-              setTimeout(function () {
-                copyBankBtn.textContent = 'Copy bank details';
-              }, 2000);
+              showToast('Bank details copied');
             },
             function () {
               alert('Copy failed. You can copy the details manually.');
@@ -736,9 +759,12 @@
         });
       }
 
+      // Initial load
       loadCart();
     })();
   </script>
 </body>
 </html>
+
+
 
