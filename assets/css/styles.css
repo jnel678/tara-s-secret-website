@@ -142,6 +142,19 @@ body {
   color: #3A3A3A;
 }
 
+.nav-cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.2rem;
+  padding: 0 0.3rem;
+  margin-left: 0.25rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #FF3FA6;
+  color: #FFFFFF;
+}
+
 .nav-links a:hover {
   color: #FF3FA6;
 }
@@ -516,6 +529,29 @@ body {
     display: none; /* hide single-item price on small screens */
   }
 }
+
+/* Toast message for cart actions */
+.cart-toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  background: #3A3A3A;
+  color: #FFFFFF;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cart-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ---------- How it works ---------- */
 .section-how {
