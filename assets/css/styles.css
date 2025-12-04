@@ -491,6 +491,38 @@ body {
 .cart-table tbody tr:nth-child(odd) {
   background: #FFF7FB;
 }
+.cart-qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cart-qty-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.cart-qty-btn:hover {
+  background: #FFE6F3;
+  border-color: #FFC8E0;
+}
+
+.cart-qty-value {
+  min-width: 1.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 
 .cart-remove-btn {
   background: transparent;
