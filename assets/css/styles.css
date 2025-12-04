@@ -390,14 +390,20 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
 }
 
-/* Featured product images – better crop for tall photos */
+/* Featured product images – default for all */
 .featured-card img {
   width: 100%;
-  height: 260px;          /* a bit taller so more of the applicator shows */
-  object-fit: cover;      /* keep it nicely filled without distortion */
-  object-position: center top; /* show more of the top of the image */
+  height: 230px;
+  object-fit: cover;
   display: block;
 }
+
+/* Only for very tall images like the plumper photo */
+.featured-card img.featured-img-tall {
+  height: 260px;           /* a bit taller */
+  object-position: center top; /* keep the applicator visible */
+}
+
 
 .featured-body {
   padding: 0.9rem 1rem 1rem;
