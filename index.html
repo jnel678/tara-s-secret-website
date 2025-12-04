@@ -9,37 +9,29 @@
 <body>
   <!-- TOP NAV -->
   <header class="site-header">
-        <div class="nav-brand">
-      <img
-        src="assets/css/taras-secret-logo.png"
-        alt="Tara's Secret"
-        class="nav-logo"
-      />
-    </div>
-
+    <div class="container nav-bar">
+      <div class="brand">
+        <img
+          src="assets/css/taras-secret-logo.png"
+          alt="Tara's Secret"
+          class="nav-logo"
+        />
+        <div class="brand-text">
           <span class="brand-tagline">Gloss. Care. Confidence.</span>
         </div>
       </div>
 
-          <nav class="nav-links">
-  <a href="#shop-products">Shop</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <a href="#cart">
-    Cart
-    <span id="cart-count" class="nav-cart-count">0</span>
-  </a>
-  <a href="#shop-products" class="btn btn-primary nav-cta">
-    Shop now
-  </a>
-</nav>
-
-
-
-      <div class="hero-actions">
-  <!-- Main call-to-action is now in the header -->
-</div>
-
+      <nav class="nav-links">
+        <a href="#shop-products">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#cart">
+          Cart
+          <span id="cart-count" class="nav-cart-count">0</span>
+        </a>
+        <a href="#shop-products" class="btn btn-primary nav-cta">Shop now</a>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -59,7 +51,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#shop" class="btn btn-primary">Explore the collection</a>
+            <a href="#shop-products" class="btn btn-primary">Explore the collection</a>
             <a href="#about" class="btn btn-link">Our story</a>
           </div>
 
@@ -71,7 +63,6 @@
         </div>
 
         <div class="hero-image">
-          <!-- uses the file you uploaded in assets/css/ -->
           <img src="assets/css/hero-main.jpg" alt="Tara's Secret lip products" />
         </div>
       </div>
@@ -103,388 +94,370 @@
           <p></p>
         </div>
 
-            <div id="shop-products" class="product-grid">
-
+        <!-- CART PANEL -->
         <div class="cart-panel" id="cart">
-      <h3>Your cart</h3>
-      <p class="cart-intro">
-        Add items to your cart to see your total. To place an order, make a transfer to the account below
-        and send your proof of payment on WhatsApp with your cart details and delivery information.
-      </p>
+          <h3>Your cart</h3>
+          <p class="cart-intro">
+            Add items to your cart to see your total. To place an order, make a transfer to the account below
+            and send your proof of payment on WhatsApp with your cart details and delivery information.
+          </p>
 
-      <div id="cart-empty" class="cart-empty">Your cart is currently empty.</div>
+          <div id="cart-empty" class="cart-empty">Your cart is currently empty.</div>
 
-      <div id="cart-content" class="cart-content" style="display:none;">
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Qty</th>
-              <th>Price (₦)</th>
-              <th>Subtotal (₦)</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="cart-items"></tbody>
-        </table>
+          <div id="cart-content" class="cart-content" style="display:none;">
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Price (₦)</th>
+                  <th>Subtotal (₦)</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cart-items"></tbody>
+            </table>
 
-        <div class="cart-total-row">
-          <span>Total:</span>
-          <span id="cart-total-amount">₦0</span>
+            <div class="cart-total-row">
+              <span>Total:</span>
+              <span id="cart-total-amount">₦0</span>
+            </div>
+
+            <button type="button" class="btn btn-ghost" id="clear-cart">Clear cart</button>
+          </div>
+
+          <div class="bank-details">
+            <h4>How to pay</h4>
+            <ol>
+              <li>Add the products you want to your cart and confirm the total amount.</li>
+              <li>Make a transfer to the account below:</li>
+            </ol>
+            <p class="bank-line"><strong>Bank:</strong> Moniepoint</p>
+            <p class="bank-line"><strong>Account name:</strong> Emeneka Ifeyinwa</p>
+            <p class="bank-line"><strong>Account number:</strong> 8123436915</p>
+
+            <p>After payment, send your proof of payment and your order details to WhatsApp:</p>
+            <div class="cart-actions">
+              <button type="button" class="btn btn-ghost" id="copy-bank-details">
+                Copy bank details
+              </button>
+              <a class="btn btn-primary" href="http://wa.me/2348123436915" target="_blank" rel="noopener noreferrer">
+                Send proof on WhatsApp
+              </a>
+            </div>
+
+            <p class="cart-note">
+              Please don’t share your full card details on WhatsApp. A screenshot or transaction reference is enough.
+            </p>
+          </div>
         </div>
 
-        <button type="button" class="btn btn-ghost" id="clear-cart">Clear cart</button>
-      </div>
+        <!-- PRODUCT GRID -->
+        <div id="shop-products" class="product-grid">
+          <!-- LIP GLOSS (7 shades) -->
+          <article class="product-card">
+            <img class="product-img" src="assets/css/clair-gloss.jpg" alt="Clair lip gloss" />
+            <p class="product-tag">Lip gloss</p>
+            <h3>Clair Gloss</h3>
+            <p class="product-desc">
+              Tara’s Secret Clair Gloss. Shine naturally, stay nourished. Infused with coconut &amp; almond oils
+              for soft, glossy lips with no pigment.
+            </p>
+            <p class="product-meta"><strong>Shade:</strong> Clear</p>
+            <p class="product-price">₦6,500</p>
+            <p class="product-note">Tap “Add to cart” to include this in your order.</p>
+            <button
+              type="button"
+              class="btn btn-primary add-to-cart"
+              data-id="clair-gloss"
+              data-name="Clair Gloss"
+              data-price="6500"
+            >
+              Add to cart
+            </button>
+          </article>
 
-      <div class="bank-details">
-        <h4>How to pay</h4>
-        <ol>
-          <li>Add the products you want to your cart and confirm the total amount.</li>
-          <li>Make a transfer to the account below:</li>
-        </ol>
-        <p class="bank-line"><strong>Bank:</strong> Moniepoint</p>
-        <p class="bank-line"><strong>Account name:</strong> Emeneka Ifeyinwa</p>
-        <p class="bank-line"><strong>Account number:</strong> 8123436915</p>
+          <article class="product-card">
+            <img class="product-img" src="assets/css/rose-gloss.jpg" alt="Rose lip gloss" />
+            <p class="product-tag">Lip gloss</p>
+            <h3>Rose Gloss</h3>
+            <p class="product-desc">
+              Tara’s Secret Rose Gloss. A soft pink tint with a hint of shine. Enriched with coconut oil,
+              vitamin E, carrot seed oil and glycine for nourished, softly scented lips.
+            </p>
+            <p class="product-meta"><strong>Shade:</strong> Pink</p>
+            <p class="product-price">₦6,500</p>
+            <p class="product-note">Tap “Add to cart” to include this in your order.</p>
+            <button
+              type="button"
+              class="btn btn-primary add-to-cart"
+              data-id="rose-gloss"
+              data-name="Rose Gloss"
+              data-price="6500"
+            >
+              Add to cart
+            </button>
+          </article>
 
-        <p>After payment, send your proof of payment and your order details to WhatsApp:</p>
-        <div class="cart-actions">
-          <button type="button" class="btn btn-ghost" id="copy-bank-details">
-            Copy bank details
-          </button>
-          <a class="btn btn-primary" href="http://wa.me/2348123436915" target="_blank" rel="noopener noreferrer">
-            Send proof on WhatsApp
-          </a>
+          <article class="product-card">
+            <img class="product-img" src="assets/css/almond-butter-gloss.jpg" alt="Almond Butter nude shimmer lip gloss" />
+            <p class="product-tag">Lip gloss</p>
+            <h3>Almond Butter Gloss</h3>
+            <p class="product-desc">
+              Tara’s Secret Almond Butter Lip Gloss. A soft nude shimmer that glides on smoothly, hydrates
+              beautifully and gives a natural, buttery shine that suits every skin tone.
+            </p>
+            <p class="product-meta"><strong>Shade:</strong> Nude</p>
+            <p class="product-price">₦6,500</p>
+            <p class="product-note">Tap “Add to cart” to include this in your order.</p>
+            <button
+              type="button"
+              class="btn btn-primary add-to-cart"
+              data-id="almond-butter-gloss"
+              data-name="Almond Butter Gloss"
+              data-price="6500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <article class="product-card">
+            <img class="product-img" src="assets/css/scarlet-gloss.jpg" alt="Scarlet dark red lip gloss" />
+            <p class="product-tag">Lip gloss</p>
+            <h3>Scarlet Gloss</h3>
+            <p class="product-desc">
+              Tara’s Secret Scarlet Gloss. Bold and rich, this dark red gloss adds a sultry shine with a smooth
+              finish for a confident, luxurious pop of color.
+            </p>
+            <p class="product-meta"><strong>Shade:</strong> Dark red</p>
+            <p class="product-price">₦6,500</p>
+            <p class="product-note">Add this gloss to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="scarlet-gloss"
+              data-name="Scarlet Gloss"
+              data-price="6500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <article class="product-card">
+            <img class="product-img" src="assets/css/chocolat-gloss.jpg" alt="Chocolate brown lip gloss" />
+            <p class="product-tag">Lip gloss</p>
+            <h3>Chocolat Gloss</h3>
+            <p class="product-desc">
+              Tara’s Secret Chocolate Gloss. Rich, smooth and irresistibly sweet. This brown gloss delivers a
+              silky shine with a warm chocolate scent, leaving lips nourished and glossy.
+            </p>
+            <p class="product-meta"><strong>Shade:</strong> Brown</p>
+            <p class="product-price">₦6,500</p>
+            <p class="product-note">Add this gloss to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="chocolat-gloss"
+              data-name="Chocolat Gloss"
+              data-price="6500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <article class="product-card">
+            <img class="product-img" src="assets/css/cherry-gloss.jpg" alt="Cherry pink lip gloss" />
+            <p class="product-tag">Lip gloss</p>
+            <h3>Cherry Gloss</h3>
+            <p class="product-desc">
+              Tara’s Secret Cherry Gloss. Sweet, shiny and softly pink. This lightly pigmented gloss adds a
+              fresh pop of color with a smooth, glossy finish that brightens lips naturally.
+            </p>
+            <p class="product-meta"><strong>Shade:</strong> Pink</p>
+            <p class="product-price">₦6,500</p>
+            <p class="product-note">Add this gloss to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="cherry-gloss"
+              data-name="Cherry Gloss"
+              data-price="6500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <article class="product-card">
+            <img class="product-img" src="assets/css/rouge-gloss.jpg" alt="Rouge red lip gloss" />
+            <p class="product-tag">Lip gloss</p>
+            <h3>Rouge Gloss</h3>
+            <p class="product-desc">
+              Tara’s Secret Rouge Gloss. Classic, vibrant and effortlessly bold. This red gloss delivers a smooth,
+              high-shine finish for an instantly confident look.
+            </p>
+            <p class="product-meta"><strong>Shade:</strong> Red</p>
+            <p class="product-price">₦6,500</p>
+            <p class="product-note">Add this gloss to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="rouge-gloss"
+              data-name="Rouge Gloss"
+              data-price="6500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <!-- LIP PLUMP (2) -->
+          <article class="product-card">
+            <img class="product-img" src="assets/css/mint-plump.jpg" alt="Mint Lip Plump" />
+            <p class="product-tag">Lip plump</p>
+            <h3>Mint Plump</h3>
+            <p class="product-desc">
+              Tara’s Secret Mint Lip Plump. Refresh and plump with a cooling minty sensation. Infused with
+              essential oils to keep your lips soft, full and luscious.
+            </p>
+            <p class="product-meta"><strong>Flavour:</strong> Mint</p>
+            <p class="product-price">₦7,000</p>
+            <p class="product-note">Add this plump to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="mint-plump"
+              data-name="Mint Plump"
+              data-price="7000"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <article class="product-card">
+            <img class="product-img" src="assets/css/chilly-plump.jpg" alt="Chilly Lip Plump" />
+            <p class="product-tag">Lip plump</p>
+            <h3>Chilly Plump</h3>
+            <p class="product-desc">
+              Tara’s Secret Chilly Lip Plump. Turn up the heat. This bold red gloss plumps while keeping lips
+              soft and nourished, with a refreshing tingle that lasts.
+            </p>
+            <p class="product-meta"><strong>Flavour:</strong> Chilly</p>
+            <p class="product-price">₦7,000</p>
+            <p class="product-note">Add this plump to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="chilly-plump"
+              data-name="Chilly Plump"
+              data-price="7000"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <!-- LIP OIL (1) -->
+          <article class="product-card">
+            <img class="product-img" src="assets/css/rose-elixir-oil.jpg" alt="Rose Elixir Lip Oil" />
+            <p class="product-tag">Lip oil</p>
+            <h3>Rose Elixir Lip Oil</h3>
+            <p class="product-desc">
+              Tara’s Secret Rose Elixir Oil. Nourish and renew with a luxurious blend of essential oils that heals,
+              regenerates and leaves lips soft, smooth and naturally radiant.
+            </p>
+            <p class="product-meta"><strong>Type:</strong> Rose elixir</p>
+            <p class="product-price">₦3,500</p>
+            <p class="product-note">Add this lip oil to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="rose-elixir-oil"
+              data-name="Rose Elixir Lip Oil"
+              data-price="3500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <!-- LIP BALM (1) -->
+          <article class="product-card">
+            <img class="product-img" src="assets/css/lip-balm.jpg" alt="Tara’s Secret Lip Balm" />
+            <p class="product-tag">Lip balm</p>
+            <h3>Tara’s Secret Lip Balm</h3>
+            <p class="product-desc">
+              Soft, smooth protection. This nourishing balm hydrates and shields your lips all day, keeping them
+              naturally healthy and comfortable.
+            </p>
+            <p class="product-meta"><strong>Shades:</strong> Pink, red, pale</p>
+            <p class="product-price">₦3,500</p>
+            <p class="product-note">Add this balm to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="lip-balm"
+              data-name="Tara's Secret Lip Balm"
+              data-price="3500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <!-- LIP SCRUBS (3) -->
+          <article class="product-card">
+            <img class="product-img" src="assets/css/cocoa-scrub.jpg" alt="Cocoa Lip Scrub" />
+            <p class="product-tag">Lip scrub</p>
+            <h3>Cocoa Lip Scrub</h3>
+            <p class="product-desc">
+              Tara’s Secret Cocoa Lip Scrub. Sweet, soft and smooth. Gently exfoliates with brown sugar, honey
+              and essential oils while delivering a delicious chocolate flavour.
+            </p>
+            <p class="product-meta"><strong>Flavour:</strong> Cocoa</p>
+            <p class="product-price">₦5,500</p>
+            <p class="product-note">Add this scrub to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="cocoa-scrub"
+              data-name="Cocoa Lip Scrub"
+              data-price="5500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <article class="product-card">
+            <img class="product-img" src="assets/css/ruby-scrub.jpg" alt="Ruby Lip Scrub" />
+            <p class="product-tag">Lip scrub</p>
+            <h3>Ruby Lip Scrub</h3>
+            <p class="product-desc">
+              Tara’s Secret Ruby Lip Scrub. Bright, smooth and refreshing. Gently buffs away dryness with
+              natural exfoliants, leaving lips soft, renewed and nourished.
+            </p>
+            <p class="product-meta"><strong>Flavour:</strong> Ruby</p>
+            <p class="product-price">₦5,500</p>
+            <p class="product-note">Add this scrub to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="ruby-scrub"
+              data-name="Ruby Lip Scrub"
+              data-price="5500"
+            >
+              Add to cart
+            </button>
+          </article>
+
+          <article class="product-card">
+            <img class="product-img" src="assets/css/vanilla-scrub.jpg" alt="Vanilla Lip Scrub" />
+            <p class="product-tag">Lip scrub</p>
+            <h3>Vanilla Lip Scrub</h3>
+            <p class="product-desc">
+              Tara’s Secret Vanilla Lip Scrub. Softness with a sweet touch. Gently exfoliates with natural sugars
+              and nourishing oils, leaving lips smooth, hydrated and wrapped in a warm vanilla scent.
+            </p>
+            <p class="product-meta"><strong>Flavour:</strong> Vanilla</p>
+            <p class="product-price">₦5,500</p>
+            <p class="product-note">Add this scrub to your order.</p>
+            <button
+              class="btn btn-primary add-to-cart"
+              data-id="vanilla-scrub"
+              data-name="Vanilla Lip Scrub"
+              data-price="5500"
+            >
+              Add to cart
+            </button>
+          </article>
         </div>
 
-        <p class="cart-note">
-          Please don’t share your full card details on WhatsApp. A screenshot or transaction reference is enough.
-        </p>
-      </div>
-    </div>
-
-    <div id="shop-products" class="product-grid">
-
-
-
-                    <!-- LIP GLOSS (7 shades) -->
-      <article class="product-card">
-        <img class="product-img" src="assets/css/clair-gloss.jpg" alt="Clair lip gloss" />
-        <p class="product-tag">Lip gloss</p>
-        <h3>Clair Clair Gloss</h3>
-        <p class="product-desc">
-          Tara’s Secret Clair Gloss. Shine naturally, stay nourished. Infused with coconut &amp; almond oils
-          for soft, glossy lips with no pigment.
-        </p>
-        <p class="product-meta"><strong>Shade:</strong> Cliar</p>
-        <p class="product-price">₦6,500</p>
-<p class="product-note">Tap “Add to cart” to include this in your order.</p>
-<button
-  type="button"
-  class="btn btn-primary add-to-cart"
-  data-id="clair-gloss"
-  data-name="Clair lip Gloss"
-  data-price="6500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/rose-gloss.jpg" alt="Rose lip gloss" />
-        <p class="product-tag">Lip gloss</p>
-        <h3>Rose Gloss</h3>
-        <p class="product-desc">
-          Tara’s Secret Rose Gloss. A soft pink tint with a hint of shine. Enriched with coconut oil,
-          vitamin E, carrot seed oil and glycine for nourished, softly scented lips.
-        </p>
-        <p class="product-meta"><strong>Shade:</strong> Pink</p>
-        <p class="product-price">₦6,500</p>
-<p class="product-note">Tap “Add to cart” to include this in your order.</p>
-<button
-  type="button"
-  class="btn btn-primary add-to-cart"
-  data-id="Rose lip gloss"
-  data-name="Rose lip Gloss"
-  data-price="6500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/almond-butter-gloss.jpg" alt="Almond Butter nude shimmer lip gloss" />
-        <p class="product-tag">Lip gloss</p>
-        <h3>Almond Butter Gloss</h3>
-        <p class="product-desc">
-          Tara’s Secret Almond Butter Lip Gloss. A soft nude shimmer that glides on smoothly, hydrates
-          beautifully and gives a natural, buttery shine that suits every skin tone.
-        </p>
-        <p class="product-meta"><strong>Shade:</strong> Nude</p>
-        <p class="product-price">₦6,500</p>
-<p class="product-note">Tap “Add to cart” to include this in your order.</p>
-<button
-  type="button"
-  class="btn btn-primary add-to-cart"
-  data-id="almond-butter-gloss"
-  data-name="Almond Butter Gloss"
-  data-price="6500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/scarlet-gloss.jpg" alt="Scarlet dark red lip gloss" />
-        <p class="product-tag">Lip gloss</p>
-        <h3>Scarlet Gloss</h3>
-        <p class="product-desc">
-          Tara’s Secret Scarlet Gloss. Bold and rich, this dark red gloss adds a sultry shine with a smooth
-          finish for a confident, luxurious pop of color.
-        </p>
-        <p class="product-meta"><strong>Shade:</strong> Dark red</p>
-        <p class="product-price">₦6,500</p>
-<p class="product-note">Add this gloss to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="scarlet-gloss"
-  data-name="Scarlet Gloss"
-  data-price="6500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/chocolat-gloss.jpg" alt="Chocolate brown lip gloss" />
-        <p class="product-tag">Lip gloss</p>
-        <h3>Chocolat Gloss</h3>
-        <p class="product-desc">
-          Tara’s Secret Chocolate Gloss. Rich, smooth and irresistibly sweet. This brown gloss delivers a
-          silky shine with a warm chocolate scent, leaving lips nourished and glossy.
-        </p>
-        <p class="product-meta"><strong>Shade:</strong> Brown</p>
-        <p class="product-price">₦6,500</p>
-<p class="product-note">Add this gloss to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="chocolat-gloss"
-  data-name="Chocolat Gloss"
-  data-price="6500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/cherry-gloss.jpg" alt="Cherry pink lip gloss" />
-        <p class="product-tag">Lip gloss</p>
-        <h3>Cherry Gloss</h3>
-        <p class="product-desc">
-          Tara’s Secret Cherry Gloss. Sweet, shiny and softly pink. This lightly pigmented gloss adds a
-          fresh pop of color with a smooth, glossy finish that brightens lips naturally.
-        </p>
-        <p class="product-meta"><strong>Shade:</strong> Pink</p>
-        <p class="product-price">₦6,500</p>
-<p class="product-note">Add this gloss to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="cherry-gloss"
-  data-name="Cherry Gloss"
-  data-price="6500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/rouge-gloss.jpg" alt="Rouge red lip gloss" />
-        <p class="product-tag">Lip gloss</p>
-        <h3>Rouge Gloss</h3>
-        <p class="product-desc">
-          Tara’s Secret Rouge Gloss. Classic, vibrant and effortlessly bold. This red gloss delivers a smooth,
-          high-shine finish for an instantly confident look.
-        </p>
-        <p class="product-meta"><strong>Shade:</strong> Red</p>
-        <p class="product-price">₦6,500</p>
-<p class="product-note">Add this gloss to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="rouge-gloss"
-  data-name="Rouge Gloss"
-  data-price="6500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <!-- LIP PLUMP (2) -->
-      <article class="product-card">
-        <img class="product-img" src="assets/css/mint-plump.jpg" alt="Mint Lip Plump" />
-        <p class="product-tag">Lip plump</p>
-        <h3>Mint Plump</h3>
-        <p class="product-desc">
-          Tara’s Secret Mint Lip Plump. Refresh and plump with a cooling minty sensation. Infused with
-          essential oils to keep your lips soft, full and luscious.
-        </p>
-        <p class="product-meta"><strong>Flavour:</strong> Mint</p>
-       <p class="product-price">₦7,000</p>
-<p class="product-note">Add this plump to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="mint-plump"
-  data-name="Mint Plump"
-  data-price="7000"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/chilly-plump.jpg" alt="Chilly Lip Plump" />
-        <p class="product-tag">Lip plump</p>
-        <h3>Chilly Plump</h3>
-        <p class="product-desc">
-          Tara’s Secret Chilly Lip Plump. Turn up the heat. This bold red gloss plumps while keeping lips
-          soft and nourished, with a refreshing tingle that lasts.
-        </p>
-        <p class="product-meta"><strong>Flavour:</strong> Chilly</p>
-        <p class="product-price">₦7,000</p>
-<p class="product-note">Add this plump to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="chilly-plump"
-  data-name="Chilly Plump"
-  data-price="7000"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <!-- LIP OIL (1) -->
-      <article class="product-card">
-        <img class="product-img" src="assets/css/rose-elixir-oil.jpg" alt="Rose Elixir Lip Oil" />
-        <p class="product-tag">Lip oil</p>
-        <h3>Rose Elixir Lip Oil</h3>
-        <p class="product-desc">
-          Tara’s Secret Rose Elixir Oil. Nourish and renew with a luxurious blend of essential oils that heals,
-          regenerates and leaves lips soft, smooth and naturally radiant.
-        </p>
-        <p class="product-meta"><strong>Type:</strong> Rose elixir</p>
-        <p class="product-price">₦3,500</p>
-<p class="product-note">Add this lip oil to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="rose-elixir-oil"
-  data-name="Rose Elixir Lip Oil"
-  data-price="3500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <!-- LIP BALM (1) -->
-      <article class="product-card">
-        <img class="product-img" src="assets/css/lip-balm.jpg" alt="Tara’s Secret Lip Balm" />
-        <p class="product-tag">Lip balm</p>
-        <h3>Tara’s Secret Lip Balm</h3>
-        <p class="product-desc">
-          Soft, smooth protection. This nourishing balm hydrates and shields your lips all day, keeping them
-          naturally healthy and comfortable.
-        </p>
-        <p class="product-meta"><strong>Shades:</strong> Pink, red, pale</p>
-        <p class="product-price">₦3,500</p>
-<p class="product-note">Add this balm to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="lip-balm"
-  data-name="Tara's Secret Lip Balm"
-  data-price="3500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <!-- LIP SCRUBS (3) -->
-      <article class="product-card">
-        <img class="product-img" src="assets/css/cocoa-scrub.jpg" alt="Cocoa Lip Scrub" />
-        <p class="product-tag">Lip scrub</p>
-        <h3>Cocoa Lip Scrub</h3>
-        <p class="product-desc">
-          Tara’s Secret Cocoa Lip Scrub. Sweet, soft and smooth. Gently exfoliates with brown sugar, honey
-          and essential oils while delivering a delicious chocolate flavour.
-        </p>
-        <p class="product-meta"><strong>Flavour:</strong> Cocoa</p>
-        <p class="product-price">₦5,500</p>
-<p class="product-note">Add this scrub to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="cocoa-scrub"
-  data-name="Cocoa Lip Scrub"
-  data-price="5500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/ruby-scrub.jpg" alt="Ruby Lip Scrub" />
-        <p class="product-tag">Lip scrub</p>
-        <h3>Ruby Lip Scrub</h3>
-        <p class="product-desc">
-          Tara’s Secret Ruby Lip Scrub. Bright, smooth and refreshing. Gently buffs away dryness with
-          natural exfoliants, leaving lips soft, renewed and nourished.
-        </p>
-        <p class="product-meta"><strong>Flavour:</strong> Ruby</p>
-        <p class="product-price">₦5,500</p>
-<p class="product-note">Add this scrub to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="ruby-scrub"
-  data-name="Ruby Lip Scrub"
-  data-price="5500"
->
-  Add to cart
-</button>
-
-      </article>
-
-      <article class="product-card">
-        <img class="product-img" src="assets/css/vanilla-scrub.jpg" alt="Vanilla Lip Scrub" />
-        <p class="product-tag">Lip scrub</p>
-        <h3>Vanilla Lip Scrub</h3>
-        <p class="product-desc">
-          Tara’s Secret Vanilla Lip Scrub. Softness with a sweet touch. Gently exfoliates with natural sugars
-          and nourishing oils, leaving lips smooth, hydrated and wrapped in a warm vanilla scent.
-        </p>
-        <p class="product-meta"><strong>Flavour:</strong> Vanilla</p>
-        <p class="product-price">₦5,500</p>
-<p class="product-note">Add this scrub to your order.</p>
-<button
-  class="btn btn-primary add-to-cart"
-  data-id="vanilla-scrub"
-  data-name="Vanilla Lip Scrub"
-  data-price="5500"
->
-  Add to cart
-</button>
-
-      </article>
-
-          
-
-                <!-- Featured products strip -->
+        <!-- Featured products strip -->
         <div class="featured-section">
           <div class="featured-header">
             <p class="featured-eyebrow">Our collection</p>
@@ -498,10 +471,10 @@
             <!-- Featured card 1 -->
             <article class="featured-card">
               <span class="featured-badge featured-badge-bestseller">Bestseller</span>
-              <img src="assets/css/featured-plump.jpg" alt="Velvet Rose Lip Gloss" />
+              <img src="assets/css/featured-plump.jpg" alt="Rouge Lip Gloss" />
               <div class="featured-body">
-                <h4> Rouge Lip Gloss</h4>
-                <p class="featured-price">₦6500</p>
+                <h4>Rouge Lip Gloss</h4>
+                <p class="featured-price">₦6,500</p>
               </div>
             </article>
 
@@ -511,20 +484,19 @@
               <img src="assets/css/featured-plump.jpg" alt="Plump &amp; Shine Lip Plumper" />
               <div class="featured-body">
                 <h4>Plump &amp; Shine Lip Plumper</h4>
-                <p class="featured-price">₦7000</p>
+                <p class="featured-price">₦7,000</p>
               </div>
             </article>
           </div>
 
           <div class="featured-actions">
-            <a href="#shop" class="btn btn-ghost">View all products</a>
+            <a href="#shop-products" class="btn btn-ghost">View all products</a>
           </div>
         </div>
-
+      </div>
     </section>
 
     <!-- HOW IT WORKS -->
-        <!-- HOW IT WORKS -->
     <section class="section section-how">
       <div class="container">
         <div class="section-header">
@@ -542,7 +514,7 @@
             <p>
               Explore the Tara's Secret collection and pick the glosses and lip care you love.
             </p>
-            <a href="#shop" class="btn btn-link">Browse products</a>
+            <a href="#shop-products" class="btn btn-link">Browse products</a>
           </div>
 
           <div class="step-card">
@@ -566,7 +538,6 @@
       </div>
     </section>
 
-
     <!-- ABOUT -->
     <section id="about" class="section section-about">
       <div class="container about-grid">
@@ -586,12 +557,11 @@
           <h3>Our mission</h3>
           <p>
             To redefine beauty by creating products that help you feel soft, confident, and authentically yourself 
-            without pressure, without comparison, and  without the world’s unrealistic standards.
+            without pressure, without comparison, and without the world’s unrealistic standards.
           </p>
         </div>
 
         <div class="about-image">
-          <!-- uses the second file you uploaded -->
           <img src="assets/css/about-main.png" alt="Tara's Secret brand and lip care collection" />
         </div>
       </div>
@@ -665,13 +635,20 @@
   </main>
 
   <!-- FOOTER -->
-            <div id="cart-toast" class="cart-toast"></div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Tara's Secret. All rights reserved.</p>
+      <p class="footer-note">
+        Tara's Secret is a Nigerian-based online beauty brand offering lip gloss, lip plump, lip scrub, lip oils and lip balm.
+      </p>
+    </div>
+  </footer>
 
+  <!-- CART TOAST -->
+  <div id="cart-toast" class="cart-toast"></div>
+
+  <!-- CART SCRIPT -->
   <script>
-    ...
-  </script>
-
-        <script>
     (function () {
       // Year in footer
       const yearEl = document.getElementById('year');
@@ -914,9 +891,3 @@
   </script>
 </body>
 </html>
-
-</body>
-</html>
-
-
-
