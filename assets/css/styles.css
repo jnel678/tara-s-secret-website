@@ -390,10 +390,12 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
 }
 
+/* Featured product images – better crop for tall photos */
 .featured-card img {
   width: 100%;
-  height: 230px;
-  object-fit: cover;
+  height: 260px;          /* a bit taller so more of the applicator shows */
+  object-fit: cover;      /* keep it nicely filled without distortion */
+  object-position: center top; /* show more of the top of the image */
   display: block;
 }
 
